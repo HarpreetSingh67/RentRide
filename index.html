@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RentRide - Vehicle Rental Platform</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ========== HEADER ========== -->
+    <h1>RentRide - Vehicle Rental Platform</h1>
+    <h3>RENT CARS, BIKES AND SCOOTERS ONLINE AT AFFORDABLE PRICES!</h3>
+
+    <!-- ========== NAVIGATION ========== -->
+    <p>
+        <a href="#home">Home</a> |
+        <a href="#vehicles">Vehicles</a> |
+        <a href="#booking">Book Now</a> |
+        <a href="#history">My Bookings</a> |
+        <a href="#admin">Admin</a> |
+        <a href="#login">Login</a>
+    </p>
+    <hr>
+
+                <!-- ========== LOGIN ========== -->
+    <h2 id="login">User Login</h2>
+    <form>
+        <label for="loginEmail">Email:</label>
+        <input type="email" id="loginEmail" name="loginEmail" required>
+        <br><br>
+
+        <label for="loginPass">Password:</label>
+        <input type="password" id="loginPass" name="loginPass" minlength="6" required>
+        <br><br>
+
+        <label for="role">Login As:</label>
+        <select id="role" name="role">
+            <option>Customer</option>
+            <option>Rental Provider</option>
+            <option>Admin</option>
+        </select>
+        <br><br>
+        <hr>
+
+        <input type="submit" value="Login">
+    </form>
+    <hr>
+
+    <!-- ========== SEARCH ========== -->
+    <h2 id="home">Search Vehicles</h2>
+    <form>
+        <label for="type">Vehicle Type:</label>
+        <select id="type" name="type">
+            <option>All</option>
+            <option>Car</option>
+            <option>Bike</option>
+            <option>Scooter</option>
+        </select>
+        <br><br>
+
+        <label for="pickup">Pickup Date:</label>
+        <input type="date" id="pickup" name="pickup">
+        <br><br>
+
+        <label for="dropoff">Drop Date:</label>
+        <input type="date" id="dropoff" name="dropoff">
+        <br><br>
+
+        <input type="submit" value="Search">
+    </form>
+    <hr>
+
+    <!-- ========== AVAILABLE VEHICLES ========== -->
+    <h2 id="vehicles">Available Vehicles</h2>
+    <table bordr="1" cellpadding="8" cellspacing="0">
+        <tr>
+            <th>Vehicle</th>
+            <th>Type</th>
+            <th>Seats</th>
+            <th>Fuel</th>
+            <th>Price per Day</th>
+            <th>Status</th>
+        </tr>
+        <tr>
+            <td>Maruti Swift</td>
+            <td>Car</td>
+            <td>5</td>
+            <td>Petrol</td>
+            <td>Rs. 1800</td>
+            <td>Available</td>
+        </tr>
+        <tr>
+            <td>Hyundai Creta</td>
+            <td>Car</td>
+            <td>5</td>
+            <td>Diesel</td>
+            <td>Rs. 2800</td>
+            <td>Booked</td>
+        </tr>
+        <tr>
+            <td>Royal Enfield Classic</td>
+            <td>Bike</td>
+            <td>2</td>
+            <td>Petrol</td>
+            <td>Rs. 900</td>
+            <td>Available</td>
+        </tr>
+        <tr>
+            <td>Yamaha R15</td>
+            <td>Bike</td>
+            <td>2</td>
+            <td>Petrol</td>
+            <td>Rs. 1100</td>
+            <td>Available</td>
+        </tr>
+        <tr>
+            <td>Honda Activa</td>
+            <td>Scooter</td>
+            <td>2</td>
+            <td>Petrol</td>
+            <td>Rs. 500</td>
+            <td>Available</td>
+        </tr>
+        <tr>
+            <td>TVS Jupiter</td>
+            <td>Scooter</td>
+            <td>2</td>
+            <td>Petrol</td>
+            <td>Rs. 700</td>
+            <td>Booked</td>
+        </tr>
+    </table>
+    <hr>
+
+    <!-- ========== BOOKING FORM ========== -->
+    <h2 id="booking">Book Your Vehicle</h2>
+    <form>
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br><br>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" reguired>
+        <br><br>
+
+        <label for="license">Driving license:</label>
+        <input type="number" id="license" required>
+        <br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br><br>
+
+        <label for="phone">Phone Number:</label>
+        <input type="text" id="phone" name="phone" maxlength="10" required>
+        <br><br>
+
+        <label for="vehicle">Select Vehicle:</label>
+        <select id="vehicle" name="vehicle">
+            <option>Maruti Swift</option>
+            <option>Royal Enfield Classic</option>
+            <option>Yamaha R15</option>
+            <option>Honda Activa</option>
+        </select>
+        <br><br>
+
+        <label for="days">Number of Days:</label>
+        <input type="number" id="days" name="days" min="1" value="1">
+        <br><br>
+
+        Payment Method:<br>
+        <input type="radio" name="payment" value="upi" checked> UPI<br>
+        <input type="radio" name="payment" value="card"> Credit / Debit Card<br>
+        <input type="radio" name="payment" value="cash"> Cash on Pickup
+        <br><br>
+
+        <input type="checkbox" name="terms" required>
+        I agree to the rental terms and conditions
+        <br><br>
+
+        <input type="submit" value="Confirm Booking">
+        <input type="reset" value="Clear">
+    </form>
+    <hr>
+
+    <!-- ========== BOOKING HISTORY ========== -->
+    <h2 id="history">My Booking History</h2>
+    <table border="1" cellpadding="8" cellspacing="0">
+        <tr>
+            <th>Booking ID</th>
+            <th>Vehicle</th>
+            <th>From</th>
+            <th>To</th>
+            <th>Amount</th>
+            <th>Rental Status</th>
+        </tr>
+        <tr>
+            <td>RR1001</td>
+            <td>Honda Activa</td>
+            <td>05-09-2026</td>
+            <td>07-09-2026</td>
+            <td>Rs. 1000</td>
+            <td>Completed</td>
+        </tr>
+        <tr>
+            <td>RR1002</td>
+            <td>Maruti Swift</td>
+            <td>12-10-2026</td>
+            <td>15-10-2026</td>
+            <td>Rs. 5400</td>
+            <td>Completed</td>
+        </tr>
+        <tr>
+            <td>RR1003</td>
+            <td>Royal Enfield Classic</td>
+            <td>25-10-2026</td>
+            <td>27-10-2026</td>
+            <td>Rs. 1800</td>
+            <td>Upcoming</td>
+        </tr>
+    </table>
+    <hr>
+
+    <!-- ========== NOTIFICATIONS ========== -->
+    <h2>Notifications</h2>
+    <ul>
+        <li>Your booking RR1003 is confirmed.</li>
+        <li>Payment of Rs. 1800 received successfully.</li>
+        <li>Reminder: Pickup on 25-10-2026 at 10:00 AM.</li>
+    </ul>
+    <hr>
+
+    <!-- ========== CUSTOMER REVIEWS ========== -->
+    <h2>Customer Reviews</h2>
+    <form>
+        <label for="reviews" id="reviews" name="Enter Your Review">Enter Your Review :</label>
+            <input type="text" id="reviews">
+    </form>
+    <p><b>Rohan :</b> Very easy to book. The bike was in good condition.</p>
+    <p><b>Simran :</b> Smooth pickup and fair price. Will rent again.</p>
+    <p><b>Aman :</b> Website is simple to use but needs more vehicles.</p>
+    <hr>
+
+    <!-- ========== ADMIN DASHBOARD ========== -->
+    <h2 id="admin">Admin Dashboard</h2>
+    <ul>
+        <li>Total Vehicles: 24</li>
+        <li>Active Bookings: 9</li>
+        <li>Vehicles Under Maintenance: 3</li>
+        <li>Monthly Revenue: Rs. 48,500</li>
+    </ul>
+
+    <h3>Maintenance Schedule</h3>
+    <table border="1" cellpadding="8" cellspacing="0">
+        <tr>
+            <th>Vehicle</th>
+            <th>Last Service</th>
+            <th>Next Service Due</th>
+            <th>Status</th>
+        </tr>
+        <tr>
+            <td>Maruti Swift</td>
+            <td>01-09-2026</td>
+            <td>01-12-2026</td>
+            <td>OK</td>
+        </tr>
+        <tr>
+            <td>Hyundai Creta</td>
+            <td>10-08-2026</td>
+            <td>10-11-2026</td>
+            <td>Service Soon</td>
+        </tr>
+        <tr>
+            <td>Honda Activa</td>
+            <td>20-09-2026</td>
+            <td>20-12-2026</td>
+            <td>OK</td>
+        </tr>
+    </table>
+    <hr>
+
+
+
+    <!-- ========== FOOTER ========== -->
+    <p>&copy; 2026 RentRide Vehicle Rental Platform</p>
+
+</body>
+</html>
